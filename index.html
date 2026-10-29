@@ -1,33 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TBCA Web</title>
-    <link rel="stylesheet" href="./styles.css">
-<script src="./app.js" type="module"></script>
-
+    <meta name="theme-color" content="#146b5a" />
+    <meta name="description" content="Consulta visual de composição de alimentos inspirada na TBCA." />
+    <title>TBCA — Consulta nutricional</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div class="brand-wrap">
-        <img id="brand-logo" alt="TBCA logo" />
-        <span class="brand-name">TBCA</span>
-      </div>
-    </header>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="TBCA Consulta nutricional">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img"><path d="M8.5 5.7c3.6-2 7.8-2.1 11.5-.4 1.2.5 2.1 1.4 2.7 2.6l-3 1.5a5.4 5.4 0 0 0-2-1.4c-2.6-1.1-5.5-.9-7.9.4-1.2.6-2.1 1.6-2.7 2.8L4 10.1a8.6 8.6 0 0 1 4.5-4.4Z"/><path d="M5.1 13.1h21.8v4.1H5.1zM7.6 19.4h16.8v3.5H7.6zM11 25h10v3.2H11z"/></svg>
+          </span>
+          <span><strong>TBCA</strong><small>Consulta nutricional</small></span>
+        </a>
+        <nav class="topnav" aria-label="Navegação principal">
+          <a class="nav-link active" href="#consulta">Composição</a>
+          <a class="nav-link" href="https://www.tbca.net.br/base-dados/composicao_alimentos_calculaveis.php" target="_blank" rel="noreferrer">Fonte oficial <span aria-hidden="true">↗</span></a>
+        </nav>
+        <span class="status-pill"><span class="status-dot"></span>Base demonstrativa</span>
+      </header>
 
-    <main class="page">
-      <section class="hero">
-        <p class="eyebrow">Portal</p>
-        <h1>Bem-vindo ao TBCA</h1>
-        <p class="lead">
-          Acesso rápido às principais informações e páginas do portal institucional.
-        </p>
-      </section>
+      <main id="top">
+        <section class="hero" id="consulta">
+          <div class="hero-copy">
+            <span class="eyebrow"><span class="eyebrow-line"></span> Tabela Brasileira de Composição de Alimentos</span>
+            <h1>Encontre os nutrientes<br /><em>do seu alimento.</em></h1>
+            <p>Pesquise por nome ou código e explore a composição nutricional por 100 g, com leitura simples e organizada.</p>
+          </div>
+          <div class="hero-note">
+            <span class="note-icon" aria-hidden="true">i</span>
+            <div><strong>Para estudos e consultas rápidas</strong><br />Os valores abaixo são uma amostra local da interface.</div>
+          </div>
+        </section>
 
-      <section id="app" class="content" aria-live="polite"></section>
-    </main>
+        <section class="search-card" aria-label="Filtros de consulta">
+          <div class="search-row">
+            <label class="search-input-wrap" for="search-input">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input id="search-input" type="search" placeholder="Busque por alimento ou código..." autocomplete="off" />
+              <kbd>⌘ K</kbd>
+            </label>
+            <button class="primary-button" id="search-button" type="button"><span aria-hidden="true">⌕</span> Buscar alimentos</button>
+          </div>
+          <div class="filter-row">
+            <label class="field-group">Grupo
+              <select id="group-filter">
+                <option value="all">Todos os grupos</option>
+                <option value="Frutas e derivados">Frutas e derivados</option>
+                <option value="Vegetais e derivados">Vegetais e derivados</option>
+                <option value="Cereais e derivados">Cereais e derivados</option>
+                <option value="Carnes e derivados">Carnes e derivados</option>
+                <option value="Leite e derivados">Leite e derivados</option>
+                <option value="Leguminosas e derivados">Leguminosas e derivados</option>
+              </select>
+            </label>
+            <label class="field-group">Tipo de alimento
+              <select id="type-filter">
+                <option value="all">Todos os tipos</option>
+                <option value="Alimento in natura">Alimento in natura</option>
+                <option value="Alimento processado">Alimento processado</option>
+                <option value="Preparação">Preparação</option>
+              </select>
+            </label>
+            <button class="clear-button" id="clear-button" type="button">Limpar filtros</button>
+          </div>
+        </section>
 
-    <script type="module" src="./app.js"></script>
+        <section class="overview-row" aria-label="Resumo da consulta">
+          <div><span class="overview-label">Resultados encontrados</span><strong id="result-count">12</strong></div>
+          <div><span class="overview-label">Grupos alimentares</span><strong>06</strong></div>
+          <div><span class="overview-label">Nutrientes exibidos</span><strong>12</strong></div>
+          <div class="overview-source"><span class="source-seal">TB</span><span><strong>Referência TBCA</strong><small>Valores organizados por 100 g</small></span></div>
+        </section>
+
+        <section class="content-grid">
+          <div class="results-column">
+            <div class="section-heading"><div><span class="eyebrow compact">CATÁLOGO DE ALIMENTOS</span><h2>Selecione um alimento</h2></div><span class="sort-label">Ordem alfabética <span aria-hidden="true">↓</span></span></div>
+            <div id="results-list" class="results-list" aria-live="polite"></div>
+            <div id="empty-state" class="empty-state" hidden>
+              <span class="empty-icon" aria-hidden="true">⌕</span>
+              <h3>Nenhum alimento encontrado</h3>
+              <p>Tente outro nome, código ou remova um dos filtros.</p>
+            </div>
+          </div>
+
+          <aside class="detail-panel" id="detail-panel" aria-live="polite"></aside>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p><strong>TBCA</strong> · Tabela Brasileira de Composição de Alimentos</p>
+        <p>Interface demonstrativa para estudos · <a href="https://www.tbca.net.br/" target="_blank" rel="noreferrer">Acessar tbca.net.br ↗</a></p>
+      </footer>
+    </div>
+    <script src="/app.js" type="module"></script>
   </body>
 </html>
