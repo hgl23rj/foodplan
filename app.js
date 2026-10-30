@@ -61,7 +61,7 @@ const foods = [
   },
   {
     code: 'BRC0002A',
-    name: 'Ovo de galyna, inteiro, cozido',
+    name: 'Ovo de galinha, inteiro, cozido',
     group: 'Carnes e derivados',
     type: 'Alimento in natura',
     scientific: 'Gallus gallus domesticus',
