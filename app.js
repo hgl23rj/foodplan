@@ -11,6 +11,102 @@ const foods = [
   { code: 'BRC0001E', name: 'Leite de vaca, integral, fluido', group: 'Leite e derivados', type: 'Alimento processado', scientific: 'Bos taurus', emoji: '🥛', tone: 'dairy', energy: 61, nutrients: { 'Energia': ['61', 'kcal'], 'Proteínas': ['3,2', 'g'], 'Carboidratos': ['4,8', 'g'], 'Lipídios': ['3,3', 'g'], 'Fibra alimentar': ['0,0', 'g'], 'Cálcio': ['123', 'mg'], 'Ferro': ['0,0', 'mg'], 'Sódio': ['43', 'mg'], 'Potássio': ['152', 'mg'], 'Vitamina C': ['0,9', 'mg'], 'Vitamina A': ['33', 'µg'], 'Vitamina E': ['0,1', 'mg'] } },
   { code: 'BRC0001F', name: 'Banana, prata, crua, Brasil', group: 'Frutas e derivados', type: 'Alimento in natura', scientific: 'Musa spp.', emoji: '🍌', tone: 'fruit', energy: 98, nutrients: { 'Energia': ['98', 'kcal'], 'Proteínas': ['1,3', 'g'], 'Carboidratos': ['26,0', 'g'], 'Lipídios': ['0,1', 'g'], 'Fibra alimentar': ['2,0', 'g'], 'Cálcio': ['8', 'mg'], 'Ferro': ['0,4', 'mg'], 'Sódio': ['0', 'mg'], 'Potássio': ['358', 'mg'], 'Vitamina C': ['21,6', 'mg'], 'Vitamina A': ['7', 'µg'], 'Vitamina E': ['0,1', 'mg'] } },
   { code: 'BRC0001G', name: 'Aveia, flocos, crua', group: 'Cereais e derivados', type: 'Alimento processado', scientific: 'Avena sativa L.', emoji: '🌾', tone: 'grain', energy: 394, nutrients: { 'Energia': ['394', 'kcal'], 'Proteínas': ['13,9', 'g'], 'Carboidratos': ['66,6', 'g'], 'Lipídios': ['8,5', 'g'], 'Fibra alimentar': ['9,1', 'g'], 'Cálcio': ['48', 'mg'], 'Ferro': ['4,4', 'mg'], 'Sódio': ['5', 'mg'], 'Potássio': ['336', 'mg'], 'Vitamina C': ['0,0', 'mg'], 'Vitamina A': ['0', 'µg'], 'Vitamina E': ['0,7', 'mg'] } }
+  {
+    code: 'BRC0002T',
+    name: 'Feijão preto, cozido, sem óleo e sem sal',
+    group: 'Leguminosas e derivados',
+    type: 'Preparação',
+    scientific: 'Phaseolus vulgaris L.',
+    emoji: '🫘',
+    tone: 'grain',
+    energy: 77,
+    nutrients: {
+      'Energia': ['77', 'kcal'],
+      'Proteínas': ['4,5', 'g'],
+      'Carboidratos': ['14,0', 'g'],
+      'Lipídios': ['0,5', 'g'],
+      'Fibra alimentar': ['8,4', 'g'],
+      'Cálcio': ['20', 'mg'],
+      'Ferro': ['1,5', 'mg'],
+      'Sódio': ['2', 'mg'],
+      'Potássio': ['255', 'mg'],
+      'Vitamina C': ['0,0', 'mg'],
+      'Vitamina A': ['0', 'µg'],
+      'Vitamina E': ['0,1', 'mg']
+    }
+  },
+  {
+    code: 'BRC0003B',
+    name: 'Batata-doce, cozida',
+    group: 'Vegetais e derivados',
+    type: 'Alimento in natura',
+    scientific: 'Ipomoea batatas (L.) Lam.',
+    emoji: '🍠',
+    tone: 'veg',
+    energy: 77,
+    nutrients: {
+      'Energia': ['77', 'kcal'],
+      'Proteínas': ['0,6', 'g'],
+      'Carboidratos': ['18,4', 'g'],
+      'Lipídios': ['0,1', 'g'],
+      'Fibra alimentar': ['2,2', 'g'],
+      'Cálcio': ['19', 'mg'],
+      'Ferro': ['0,2', 'mg'],
+      'Sódio': ['3', 'mg'],
+      'Potássio': ['193', 'mg'],
+      'Vitamina C': ['2,4', 'mg'],
+      'Vitamina A': ['350', 'µg'],
+      'Vitamina E': ['0,3', 'mg']
+    }
+  },
+  {
+    code: 'BRC0002A',
+    name: 'Ovo de galyna, inteiro, cozido',
+    group: 'Carnes e derivados',
+    type: 'Alimento in natura',
+    scientific: 'Gallus gallus domesticus',
+    emoji: '🥚',
+    tone: 'meat',
+    energy: 146,
+    nutrients: {
+      'Energia': ['146', 'kcal'],
+      'Proteínas': ['13,3', 'g'],
+      'Carboidratos': ['0,6', 'g'],
+      'Lipídios': ['9,5', 'g'],
+      'Fibra alimentar': ['0,0', 'g'],
+      'Cálcio': ['50', 'mg'],
+      'Ferro': ['1,8', 'mg'],
+      'Sódio': ['124', 'mg'],
+      'Potássio': ['135', 'mg'],
+      'Vitamina C': ['0,0', 'mg'],
+      'Vitamina A': ['160', 'µg'],
+      'Vitamina E': ['1,0', 'mg']
+    }
+  },
+  {
+    code: 'BRC0003F',
+    name: 'Maçã, fuji, com casca, crua',
+    group: 'Frutas e derivados',
+    type: 'Alimento in natura',
+    scientific: 'Malus domestica Borkh.',
+    emoji: '🍎',
+    tone: 'fruit',
+    energy: 56,
+    nutrients: {
+      'Energia': ['56', 'kcal'],
+      'Proteínas': ['0,3', 'g'],
+      'Carboidratos': ['15,2', 'g'],
+      'Lipídios': ['0,2', 'g'],
+      'Fibra alimentar': ['2,0', 'g'],
+      'Cálcio': ['5', 'mg'],
+      'Ferro': ['0,1', 'mg'],
+      'Sódio': ['1', 'mg'],
+      'Potássio': ['115', 'mg'],
+      'Vitamina C': ['3,5', 'mg'],
+      'Vitamina A': ['3', 'µg'],
+      'Vitamina E': ['0,2', 'mg']
+    }
+  }
 ];
 
 const state = { query: '', group: 'all', type: 'all', selected: foods[0] };
